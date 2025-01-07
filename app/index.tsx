@@ -10,8 +10,24 @@ export default function Index() {
 		<>
 			<StatusBar style='dark' />
 			<Stack.Navigator>
-				<Stack.Screen name='Meals Categories' component={CategoriesScreen} />
-				<Stack.Screen name='Meals Overview' component={MealsOverviewScreen} />
+				<Stack.Screen
+					name='Meals Categories'
+					component={CategoriesScreen}
+					options={{
+						title: 'All Categories',
+						headerStyle: { backgroundColor: 'white' },
+						headerTitleAlign: 'center',
+					}}
+				/>
+				<Stack.Screen
+					name='Meals Overview'
+					component={MealsOverviewScreen}
+					options={({ route, navigation }) => {
+						// const categoryId = route.params.categoryId;
+						// return { title: categoryId, headerTitleAlign: 'center' };
+						return { headerTitleAlign: 'center' };
+					}}
+				/>
 			</Stack.Navigator>
 		</>
 	);
