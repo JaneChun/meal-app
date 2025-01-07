@@ -43,13 +43,13 @@ export default function MealItem({
 const styles = StyleSheet.create({
 	mealItemContainer: {
 		margin: 16,
-		elevation: 4,
 		shadowColor: 'black',
 		shadowOffset: { width: 0, height: 6 },
 		shadowRadius: 4,
 		shadowOpacity: 0.15,
 	},
 	innerContainer: {
+		elevation: 4,
 		borderRadius: 8,
 		overflow: 'hidden',
 		backgroundColor: 'white',
@@ -66,5 +66,6 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 		fontWeight: 'bold',
 		padding: 8,
+		color: '#3C552D',
 	},
 });

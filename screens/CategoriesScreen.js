@@ -25,6 +25,6 @@ export default function CategoriesScreen({navigation}) {
 
 const styles = StyleSheet.create({
   rootContainer: {
-    // backgroundColor: '#021526',
+    backgroundColor: '#FFFDEC',
   }
 })

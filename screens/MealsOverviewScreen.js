@@ -13,9 +13,9 @@ export default function MealsOverviewScreen({ route, navigation }) {
 	);
 
 	useLayoutEffect(() => {
-		const { title } = CATEGORIES.find(({ id }) => id === categoryId);
+		const { title, color } = CATEGORIES.find(({ id }) => id === categoryId);
 
-		navigation.setOptions({ title });
+		navigation.setOptions({ title, headerStyle: { backgroundColor: color } });
 	}, [categoryId, navigation]);
 
 	function renderMealItem({ item }) {
@@ -42,5 +42,5 @@ export default function MealsOverviewScreen({ route, navigation }) {
 }
 
 const styles = StyleSheet.create({
-	rootContainer: { flex: 1, padding: 16 },
+	rootContainer: { flex: 1, padding: 16, backgroundColor: '#FFFDEC' },
 });

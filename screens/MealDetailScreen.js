@@ -7,7 +7,7 @@ export default function MealDetailScreen({ route }) {
 	const meal = MEALS.find(({ id }) => id === mealId);
 
 	return (
-		<View>
+		<View style={styles.rootContainer}>
 			<Image style={styles.image} source={{ uri: meal.imageUrl }} />
 			<Text style={styles.title}>{meal.title}</Text>
 			<MealDetail
@@ -32,6 +32,9 @@ export default function MealDetailScreen({ route }) {
 }
 
 const styles = StyleSheet.create({
+	rootContainer: {
+		backgroundColor: '#FFFDEC',
+	},
 	image: {
 		width: '100%',
 		height: 350,
@@ -41,6 +44,7 @@ const styles = StyleSheet.create({
 		fontSize: 24,
 		margin: 8,
 		textAlign: 'center',
+		color: '#3C552D',
 	},
 	infoContainer: {
 		margin: 16,

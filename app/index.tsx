@@ -17,8 +17,9 @@ export default function Index() {
 					component={CategoriesScreen}
 					options={{
 						title: 'All Categories',
-						headerStyle: { backgroundColor: 'white' },
+						headerStyle: { backgroundColor: '#86A788' },
 						headerTitleAlign: 'center',
+						headerTintColor: 'white',
 					}}
 				/>
 				<Stack.Screen
@@ -27,13 +28,19 @@ export default function Index() {
 					options={({ route, navigation }) => {
 						// const categoryId = route.params.categoryId;
 						// return { title: categoryId, headerTitleAlign: 'center' };
-						return { headerTitleAlign: 'center' };
+						return {
+							headerTitleAlign: 'center',
+						};
 					}}
 				/>
 				<Stack.Screen
 					name='Meal Detail'
 					component={MealDetilScreen}
-					options={{ headerTitleAlign: 'center' }}
+					options={{
+						headerStyle: { backgroundColor: '#FFB0B0' },
+						headerTitleAlign: 'center',
+						headerTintColor: 'white',
+					}}
 				/>
 			</Stack.Navigator>
 		</>
