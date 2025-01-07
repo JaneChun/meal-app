@@ -1,39 +1,42 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { MEALS } from '@/data/dummy-data';
 import MealDetail from '@/components/MealDetail';
+import SubTitle from '@/components/MealDetail/Subtitle';
+import List from '@/components/MealDetail/List';
 
 export default function MealDetailScreen({ route }) {
 	const mealId = route.params.id;
 	const meal = MEALS.find(({ id }) => id === mealId);
 
 	return (
-		<View style={styles.rootContainer}>
-			<Image style={styles.image} source={{ uri: meal.imageUrl }} />
-			<Text style={styles.title}>{meal.title}</Text>
-			<MealDetail
-				duration={meal.duration}
-				complexity={meal.complexity}
-				affordability={meal.affordability}
-			/>
+		<ScrollView contentContainerStyle={styles.outerListContainer}>
+			<View style={styles.rootContainer}>
+				<Image style={styles.image} source={{ uri: meal.imageUrl }} />
+				<Text style={styles.title}>{meal.title}</Text>
+				<MealDetail
+					duration={meal.duration}
+					complexity={meal.complexity}
+					affordability={meal.affordability}
+					style={{}}
+					textStyle={{ color: 'gray' }}
+				/>
 
-			<View style={styles.infoContainer}>
-				<Text style={styles.subTitle}>Ingredients</Text>
-				{meal.ingredients.map((ingredient) => (
-					<Text style={styles.listItem}>{ingredient}</Text>
-				))}
+				<View style={styles.innerListContainer}>
+					<SubTitle>Ingredients</SubTitle>
+					<List data={meal.ingredients} />
 
-				<Text style={styles.subTitle}>Steps</Text>
-				{meal.steps.map((step) => (
-					<Text style={styles.listItem}>{step}</Text>
-				))}
+					<SubTitle>Steps</SubTitle>
+					<List data={meal.steps} />
+				</View>
 			</View>
-		</View>
+		</ScrollView>
 	);
 }
 
 const styles = StyleSheet.create({
 	rootContainer: {
 		backgroundColor: '#FFFDEC',
+		paddingBottom: 32,
 	},
 	image: {
 		width: '100%',
@@ -46,14 +49,9 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		color: '#3C552D',
 	},
-	infoContainer: {
-		margin: 16,
-	},
-	subTitle: {
-		fontWeight: 'bold',
-		fontSize: 18,
-	},
-	listItem: {
-		paddingVertical: 2,
+	outerListContainer: {},
+	innerListContainer: {
+		width: '90%',
+		alignSelf: 'center',
 	},
 });
