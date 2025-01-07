@@ -1,7 +1,9 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StatusBar } from 'expo-status-bar';
+
 import CategoriesScreen from '../screens/CategoriesScreen';
 import MealsOverviewScreen from '../screens/MealsOverviewScreen';
-import { StatusBar } from 'expo-status-bar';
+import MealDetilScreen from '../screens/MealDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +29,11 @@ export default function Index() {
 						// return { title: categoryId, headerTitleAlign: 'center' };
 						return { headerTitleAlign: 'center' };
 					}}
+				/>
+				<Stack.Screen
+					name='Meal Detail'
+					component={MealDetilScreen}
+					options={{ headerTitleAlign: 'center' }}
 				/>
 			</Stack.Navigator>
 		</>
