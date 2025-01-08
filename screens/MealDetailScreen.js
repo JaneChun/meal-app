@@ -7,7 +7,7 @@ import List from '@/components/MealDetail/List';
 import IconButton from '@/components/IconButton';
 
 export default function MealDetailScreen({ route, navigation }) {
-	const mealId = route.params.id;
+	const mealId = route.params?.id ?? 'm1';
 	const meal = MEALS.find(({ id }) => id === mealId);
 
 	function headerButtonHandler() {

@@ -6,7 +6,7 @@ import { useLayoutEffect } from 'react';
 
 export default function MealsOverviewScreen({ route, navigation }) {
 	// const { 	params: { categoryId }	} = useRoute();
-	const { categoryId } = route.params;
+	const { categoryId } = route.params ?? { categoryId: 'c1' };
 
 	const displayedMeals = MEALS.filter((meal) =>
 		meal.categoryIds.includes(categoryId),
