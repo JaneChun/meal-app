@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+import FavoritesContextProvider from '../store/context/favorites-context';
 import CategoriesScreen from '../screens/CategoriesScreen';
 import MealsOverviewScreen from '../screens/MealsOverviewScreen';
 import MealDetilScreen from '../screens/MealDetailScreen';
@@ -49,7 +50,7 @@ function DrawerNavigator() {
 
 export default function Index() {
 	return (
-		<>
+		<FavoritesContextProvider>
 			<StatusBar style='dark' />
 
 			<Stack.Navigator>
@@ -81,6 +82,6 @@ export default function Index() {
 					}}
 				/>
 			</Stack.Navigator>
-		</>
+		</FavoritesContextProvider>
 	);
 }
