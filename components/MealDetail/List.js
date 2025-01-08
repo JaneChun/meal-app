@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 	listItem: {
 		borderRadius: 6,
 		paddingHorizontal: 8,
-		paddingVertical: 4,
+		paddingVertical: 6,
 		marginVertical: 4,
 		marginHorizontal: 8,
 		backgroundColor: '#FFE2E2',

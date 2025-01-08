@@ -1,6 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from 'expo-router';
-import MealDetail from '../components/MealDetail';
+import MealDetail from '../../components/MealDetail';
 
 export default function MealItem({
 	id,
